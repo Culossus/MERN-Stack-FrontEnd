@@ -114,11 +114,10 @@ export default class editRecipe extends Component {
     document.getElementById("form-difficulty").value = "";
 
     // Sending data to live server
-    fetch(
+    await fetch(
       `https://recipe-backend-mern.herokuapp.com/recipes/${this.state.id}`,
       {
         method: "PUT",
-        mode: "no-cors",
         // redirect: "follow",
         // headers: {
         //   Accept: "application/json",
