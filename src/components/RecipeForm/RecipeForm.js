@@ -103,15 +103,14 @@ export default class RecipeForm extends Component {
       document.getElementById("form-difficulty").value = "";
 
       // Sending data to live server
-      await fetch("https://recipe-backend-mern.herokuapp.com/recipes/", {
+      fetch("https://recipe-backend-mern.herokuapp.com/recipes/", {
         method: "POST",
         // redirect: "follow",
-        // header: {
-        //   Accept: "application/json",
-        //   "Content-Type": "application/json",
-        //   "Access-Control-Allow-Origin":
-        //     "https://mern-recipe.herokuapp.com/recipes/",
-        // },
+        header: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "https://mern-recipe.herokuapp.com/",
+        },
         //Turning the object to json
         body: JSON.stringify({
           name: obj.name,

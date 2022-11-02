@@ -119,11 +119,11 @@ export default class editRecipe extends Component {
       {
         method: "PUT",
         // redirect: "follow",
-        // headers: {
-        //   Accept: "application/json",
-        //   "Content-Type": "application/json",
-        //   "Access-Control-Allow-Origin": "*",
-        // },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
         //Turning the object to json
         body: JSON.stringify({
           name: obj.name,
@@ -140,7 +140,7 @@ export default class editRecipe extends Component {
       }
     ).then(async (res) => {
       const data = await res.json();
-      // this.props.editRecipe(data);
+      this.props.editRecipe(data);
       console.log(data);
     });
   }

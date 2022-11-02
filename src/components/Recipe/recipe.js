@@ -11,7 +11,7 @@ const Recipe = () => {
       const URL = `https://recipe-backend-mern.herokuapp.com/recipes/${recipeId}`;
       const response = await fetch(URL);
       const data = await response.json();
-      //console.log(data);
+      console.log(data);
       setRecipe(data);
     };
     fetchData();
